@@ -46,45 +46,9 @@ namespace Sabio.Web.StartUp
             }
             );
             services.AddSingleton<IAppFileService, AppFileService>();
-            services.AddSingleton<IBlogsService, BlogsService>();
-            services.AddSingleton<ICommentService, CommentService>();
-            services.AddSingleton<IContactsService, ContactsService>();
-            services.AddSingleton<IEmailService, EmailService>();
-            services.AddSingleton<IEmployeeService, EmployeeService>();
-            services.AddSingleton<IFAQCategoryService, FAQCategoryService>();
-            services.AddSingleton<IFAQsService, FAQsService>();
-            services.AddSingleton<IFilesService, FilesService>();
-            services.AddSingleton<IFlowStripeService, FlowStripeService>();
-            services.AddSingleton<IForgotPasswordService, ForgotPasswordService>();
-            services.AddSingleton<IGoogleAnalyticsService, GoogleAnalyticsService>();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<IIdentityProvider<int>, WebAuthenticationService>();
-            services.AddSingleton<IJobAttendanceService, JobAttendanceService>();
-            services.AddSingleton<IJobProposalService, JobProposalService>();
-            services.AddSingleton<IJobService, JobService>();
-            services.AddSingleton<ILicensesRelatedService, LicensesRelatedService>();
-            services.AddSingleton<ILicensesService, LicensesService>();
-            services.AddSingleton<ILicenseTypesService, LicenseTypesService>();
-            services.AddSingleton<ILocationService, LocationService>();
-            services.AddSingleton<ILookUpService, LookUpService>();
-            services.AddSingleton<IMessageService, MessageService>();
+            
             services.AddSingleton<INewsletterSubscriptionService, NewsletterSubscriptionService>();
-            services.AddSingleton<INewsletterTemplatesService, NewsletterTemplatesService>();
-            services.AddSingleton<IOrganizationService, OrganizationService>();
-            services.AddSingleton<IRatingService, RatingService>();
-            services.AddHostedService<RepeatingService>();
-            services.AddSingleton<IShareStoryService, ShareStoryService>();
-            services.AddSingleton<ISiteReferencesService, SiteReferencesService>();
-            services.AddSingleton<ISubcontractorsService, SubcontractorsService>();
-            services.AddSingleton<ISurveyAnswerService, SurveyAnswerService>();
-            services.AddSingleton<ISurveyInstanceService, SurveyInstanceService>();        
-            services.AddSingleton<ISurveyQuestionAnswerOptionsService, SurveyQuestionAnswerOptionsService>();
-            services.AddSingleton<ISurveyQuestionService, SurveyQuestionService>();
-            services.AddSingleton<ISurveyService, SurveyService>();
-            services.AddSingleton<ITrainingService, TrainingService>();
-            services.AddSingleton<IUserMapperService, UserMapperService>();
-            services.AddSingleton<IUserProfilesService, UserProfileService>();
-            services.AddSingleton<IUserService, UserService>();
+            
 
             services.AddSingleton(typeof(IUserTrackerService<>), typeof(UserTrackerService<>));
 
