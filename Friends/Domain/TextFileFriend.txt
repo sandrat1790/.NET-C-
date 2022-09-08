@@ -1,0 +1,132 @@
+﻿/*
+using Sabio.Data;
+using Sabio.Models.Domain.Friends;
+using Sabio.Models.Requests.Friends;
+using Sabio.Services;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+
+
+namespace Sabio.Db.ConsoleApp
+{
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            //Here are two example connection strings. Please check with the wiki and video courses to help you pick an option
+
+            //string connString = @"Data Source=ServerName_Or_IpAddress;Initial Catalog=DB_Name;User ID=SabioUser;Password=Sabiopass1!";
+            string connString = @"Data Source=104.42.194.102
+                                ;Initial Catalog=C118_sandrat1790_gmail
+                                ;User ID=C118_sandrat1790_gmail_User
+                                ;Password=C118_sandrat1790_gmail_User765AADB0";
+
+            TestConnection(connString);
+            TestFriendService(connString);
+
+            Console.ReadLine();//This waits for you to hit the enter key before closing windo
+        }
+
+        private static void TestFriendService(string myConnection)
+        {
+
+            #region -- Constructor Calls --
+            SqlDataProvider provider = new SqlDataProvider(myConnection);
+
+            FriendService friendService = new FriendService(provider); 
+            #endregion
+
+            #region -- Gets, Selects --
+            Friend aFriend = friendService.Get(9);
+
+            List<Friend>friends = friendService.GetAll();
+
+            //FriendPaginationRequest paginate = friendService.Pagination();
+
+            //FriendSearchRequest search = friendService.Search();
+
+            #endregion
+
+
+            #region -- Add, Update, Delete --
+            //----Add Request----------------------------------------------
+
+            FriendAddRequest request = new FriendAddRequest();
+
+            request.Title = "";
+            request.Bio = "";
+            request.Summary = "";
+            request.Headline = "";
+			request.Slug = "";
+            request.StatusId = 1;
+            request.PrimaryImageUrl = "";
+            int UserId = 61790;
+
+            int newId = friendService.Add(request, UserId);
+
+
+            //---------------------------------------------------------------
+            //----Update Request---------------------------------------------
+
+            FriendUpdateRequest updateRequest = new FriendUpdateRequest();
+            updateRequest.Title = "";
+            updateRequest.Bio = "";
+            updateRequest.Summary = "";
+            updateRequest.Headline = "";
+            updateRequest.Slug = "";
+            updateRequest.StatusId = 1;
+            updateRequest.PrimaryImageUrl = "";
+            
+            updateRequest.Id = newId;
+
+            friendService.Update(updateRequest, UserId);
+
+            Friend uFriend = friendService.Get(newId);
+
+            //---------------------------------------------------------------
+            //----Delete Request---------------------------------------------
+
+            FriendDeleteRequest deleteRequest = new FriendDeleteRequest();
+
+          
+
+
+
+            #endregion
+
+            Console.WriteLine();
+
+        }
+
+
+
+
+
+
+
+        private static void TestConnection(string connString)
+        {
+            bool isConnected = IsServerConnected(connString);
+            Console.WriteLine("DB isConnected = {0}", isConnected);
+        }
+
+        private static bool IsServerConnected(string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    return true;
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return false;
+                }
+            }
+        }
+    }
+}
+*/
